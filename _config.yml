@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: メーカーのソフトエンジニアのブログ
 subtitle:
-description:
-author: John Doe
-language:
-timezone:
+description: 思った事/感じた事つらつら書きます
+author: H.K
+language: en
+timezone: Asia/Tokyo
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -21,8 +21,8 @@ permalink_defaults:
 source_dir: source
 public_dir: public
 tag_dir: tags
-archive_dir: archives
-category_dir: categories
+archive_dir: archive
+category_dir: category
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -42,7 +42,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -51,7 +51,7 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -74,7 +74,52 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: landscape
 
+sitemap:
+    path: sitemap.xml
+
+uglify:
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - *.min.js
+
+clean_css:
+  exclude:
+    - *.min.css
+
+html_minifier:
+  exclude:
+  removeComments: true
+  removeCommentsFromCDATA: false
+  removeCDATASectionsFromCDATA: false
+  collapseWhitespace: true
+  conservativeCollapse: true
+  preserveLineBreaks: true
+  collapseBooleanAttributes: false
+  removeAttributeQuotes: false
+  removeRedundantAttributes: false
+  preventAttributesEscaping: false
+  useShortDoctype: false
+  removeEmptyAttributes: false
+  removeScriptTypeAttributes: false
+  removeStyleLinkTypeAttributes: false
+  removeOptionalTags: false
+  removeIgnored: false
+  removeEmptyElements: false
+  lint: false
+  keepClosingSlash: false
+  caseSensitive: false
+  minifyJS: true
+  minifyCSS: true
+  minifyURLs: false
+
+plugins:
+- hexo-generator-robotstxt
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+excerpt_link: 記事を読む
